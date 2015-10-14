@@ -29,9 +29,7 @@ class ReloadTrick(Trick):
 			pass
 		self.process = None
 
-
-if __name__ == "__main__":
-
+def main():
 	# parse command line arguments
 	parser = argparse.ArgumentParser(description='Watches a directory and restarts a script on file changes.')
 	parser.add_argument("command", help="Command to run and reload when file changes are detected. For example: 'echo hello!'")
@@ -51,3 +49,8 @@ if __name__ == "__main__":
 	except KeyboardInterrupt:
 		observer.stop()
 	observer.join()
+
+if __name__ == "__main__":
+	main()
+
+	

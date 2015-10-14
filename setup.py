@@ -15,8 +15,11 @@ setup(
 	# include
 	packages=find_packages(),
 	include_package_data=True,
-	install_requires=[],
+	install_requires=['watchdog >=0.8.3'],
 
 	# keep this package private
 	classifier=['Private :: Do Not Upload'],
+
+	# install as an executable script
+	entry_points={'console_scripts': ['refresh = refresh.refresh:main']}
 )
