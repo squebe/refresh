@@ -19,6 +19,7 @@ setup(
 	url='https://github.com/squebe/refresh',
 	description='Refresh will run a command and reload it when any files matching the specified pattern in the specified directory are changed.',
 	long_description=open('README.md').read(),
+	license='MIT',
 
 	# include
 	packages=find_packages(),
