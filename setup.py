@@ -1,7 +1,15 @@
 # -*- coding: utf-8 -*-
-from distutils.core import setup
-from setuptools import find_packages
+import sys
+from setuptools import find_packages, setup
 
+
+# keep this package private
+if set(sys.argv).intersection(['upload', 'register']):
+	print('This setup is private and should not be uploaded or registered.')
+	sys.exit(-1)
+
+
+# package settings
 setup(
 	# info
 	name='refresh',
@@ -18,7 +26,7 @@ setup(
 	install_requires=['watchdog >=0.8.3'],
 
 	# keep this package private
-	classifier=['Private :: Do Not Upload'],
+	classifiers=['Private :: Do Not Upload'],
 
 	# install as an executable script
 	entry_points={'console_scripts': ['refresh = refresh.refresh:main']}
