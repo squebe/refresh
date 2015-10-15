@@ -7,7 +7,8 @@ from watchdog.observers.polling import PollingObserver as Observer
 
 class ReloadTrick(Trick):
 	def __init__(self, command, patterns=None):
-		super(ReloadTrick, self).__init__(patterns=patterns)
+		if patterns: patterns = patterns.split(";")
+		super(ReloadTrick, self).__init__(patterns)
 		self.process = None
 		self.command = command
 		self.start()
