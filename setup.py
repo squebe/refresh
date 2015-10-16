@@ -30,5 +30,5 @@ setup(
 	classifiers=['Private :: Do Not Upload'],
 
 	# install as an executable script
-	entry_points={'console_scripts': ['refresh = refresh.refresh:main']}
+	entry_points={'console_scripts': ['refresh = refresh:main']}
 )
