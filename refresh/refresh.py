@@ -35,12 +35,13 @@ def main():
 	parser = argparse.ArgumentParser(description='Watches a directory and restarts a script on file changes.')
 	parser.add_argument("command", help="Command to run and reload when file changes are detected. For example: 'echo hello!'")
 	parser.add_argument("-d", "--directory", help="Directory to watch.", default=".")
+	parser.add_argument("-r", "--rate", help="How frequently to check for changes in the directory.", default="1.0")
 	parser.add_argument("-p", "--patterns", help="Pattern limiting which files trigger a reload. For example: '*.txt;*.py'", default=None)
 	args = parser.parse_args()
 
 	# setup observer
 	trick = ReloadTrick(args.command, patterns=args.patterns)
-	observer = Observer(timeout=1.0)
+	observer = Observer(timeout=float(args.rate))
 	observer.schedule(trick, args.directory, recursive=True)
 
 	# start reloader process

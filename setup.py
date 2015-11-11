@@ -13,7 +13,7 @@ if set(sys.argv).intersection(['upload', 'register']):
 setup(
 	# info
 	name='refresh',
-	version='0.0.1',
+	version='0.0.2',
 	author=u'Stephen Quebe',
 	author_email='squebe@gmail.com',
 	url='https://github.com/squebe/refresh',
